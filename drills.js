@@ -81,3 +81,20 @@ function walkTurtle(turtleArr) {
 
 const turtle = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
 walkTurtle(turtle);
+
+const encodedStr = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+
+const decodeFn = (acc, word) => {
+  if(word.length === 3) {
+    return acc + ' ';
+  } else {
+    return acc + word.slice(-1).toUpperCase();
+  }
+}
+
+function decodeStr(str) {
+  return str.split(' ')
+          .reduce(decodeFn, '');
+}
+
+console.log(decodeStr(encodedStr));

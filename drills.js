@@ -70,3 +70,14 @@ rocksWarning('Centinela Ave and Olympic Blvd');
 // => DANGER There is a Rocks on the Road hazard at Centinela Ave and Olympic Blvd
 // => The Rocks on the Road hazard has triggered 2 time(s) today!
 ogreWarning("the swamp");
+
+function walkTurtle(turtleArr) {
+  let stepArray = turtleArr.filter(pt => pt[0] >= 0 && pt[1] >= 0)
+        .map(pt => pt[0]+pt[1]);
+  stepArray.forEach(step => {
+    console.log(`${step} ${step === 1 ? 'step' : 'steps'} taken.`);
+  });
+}
+
+const turtle = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+walkTurtle(turtle);
